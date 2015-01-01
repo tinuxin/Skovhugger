@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# Version 1
+
+CACHE:
+assets/jquery-1.11.1.min.js
+
+assets/bootstrap-3.2.0-dist/js/bootstrap.min.js
+assets/angular-1.3-rc3/angular.min.js
+assets/angular-1.3-rc3/angular-animate.min.js
+assets/angular-1.3-rc3/angular-route.min.js
+
+assets/bootstrap-3.2.0-dist/css/bootstrap.min.css
+assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css
+
+index.html
+app.js
+skovhugger.css
+controllers/view1Controller.js
+controllers/view2Controller.js
+
+templates/view1Template.html
+templates/view2Template.html
+
+woodchopper.png

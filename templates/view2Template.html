@@ -1,0 +1,87 @@
+<div class="btn-group btn-group-justified btn-group-lg">
+    <!--<a class="btn btn-default disabled labeltekst">#</a>-->
+    <a class="btn btn-default" ng-class="{'active' : hits==0}" ng-click="hits=0">0</a>
+    <a class="btn btn-default" ng-class="{'active' : hits==1}" ng-click="hits=1">1</a>
+    <a class="btn btn-default" ng-hide="value===41" ng-class="{'active' : hits==2}" ng-click="hits=2">2</a>
+    <a class="btn btn-default" ng-hide="value===41" ng-class="{'active' : hits==3}" ng-click="hits=3">3</a>
+    <a class="btn btn-default" ng-hide="!value || value===41" ng-class="{'active' : hits==4}" ng-click="hits=4">4</a>
+    <a class="btn btn-default" ng-hide="!value || value===41" ng-class="{'active' : hits==5}" ng-click="hits=5">5</a>
+    <a class="btn btn-default" ng-hide="!value || value===41" ng-class="{'active' : hits==6}" ng-click="hits=6">6</a>
+    <a class="btn btn-default" ng-hide="!value || value===41 || value===25" ng-class="{'active' : hits==7}" ng-click="hits=7">7</a>
+    <a class="btn btn-default" ng-hide="!value || value===41 || value===25" ng-class="{'active' : hits==8}" ng-click="hits=8">8</a>
+    <a class="btn btn-default" ng-hide="!value || value===41 || value===25" ng-class="{'active' : hits==9}" ng-click="hits=9">9</a>
+</div>
+
+<div ng-hide="value || hits<1" ng-class="{'has-error': !multiValue[0]}" class="btn-group btn-group-justified btn-group-lg">
+    <a class="btn btn-default disabled labeltekst">1.</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==15}" ng-click="multiValue[0]=15">15</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==16}" ng-click="multiValue[0]=16">16</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==17}" ng-click="multiValue[0]=17">17</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==18}" ng-click="multiValue[0]=18">18</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==19}" ng-click="multiValue[0]=19">19</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[0]==20}" ng-click="multiValue[0]=20">20</a>
+</div>
+
+<div ng-hide="value || hits<2" ng-class="{'has-error': !multiValue[1]}" class="btn-group btn-group-justified btn-group-lg">
+    <a class="btn btn-default disabled labeltekst">2.</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==15}" ng-click="multiValue[1]=15">15</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==16}" ng-click="multiValue[1]=16">16</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==17}" ng-click="multiValue[1]=17">17</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==18}" ng-click="multiValue[1]=18">18</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==19}" ng-click="multiValue[1]=19">19</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[1]==20}" ng-click="multiValue[1]=20">20</a>
+</div>
+
+<div ng-hide="value || hits<3" ng-class="{'has-error': !multiValue[2]}" class="btn-group btn-group-justified btn-group-lg vaerdivaelger">
+    <a class="btn btn-default disabled labeltekst">3.</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==15}" ng-click="multiValue[2]=15">15</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==16}" ng-click="multiValue[2]=16">16</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==17}" ng-click="multiValue[2]=17">17</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==18}" ng-click="multiValue[2]=18">18</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==19}" ng-click="multiValue[2]=19">19</a>
+    <a class="btn btn-default" ng-class="{'active' : multiValue[2]==20}" ng-click="multiValue[2]=20">20</a>
+</div>
+
+<button class="btn btn-default btn-large btn-primary btn-block" ng-disabled="!checkValid()" ng-click="addScore()" ng-hide="gameover">
+    <span class="glyphicon glyphicon-circle-arrow-right"/>
+</button>
+<button class="btn btn-default btn-large btn-success btn-block" ng-show="gameover" ng-click="newGame()">
+    Again?
+</button>
+
+<!--</form>-->
+<div>
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+        <!--<th></th>-->
+        <th class="glyphicon glyphicon-list"></th>
+        <th ng-repeat="team in teams track by $index" class="tabelcelle"><span ng-class="{'currentteam': $index == activeTeamCounter}">{{team}}</span></th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="scoreObject in scoreTable">
+            <td class="label-important scorerow"><span class="scorelabel" ng-class="{'currentround': scoreActiveTargetRow == scoreObject}">{{scoreObject.label}}</span></td>
+            <td ng-repeat="teamCounter in teams track by $index" ng-click="showModal(scoreObject, $index)" class="tabelcelle">
+                {{scoreObject.score[$index]}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editValueModal" tabindex="-1" role="dialog" aria-labelledby="editValueModal"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Rediger</h4>
+            </div>
+            <input type="number" placeholder="Indtast ny værdi" ng-model="newScore">
+            {{newScore}}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fortryd</button>
+                <button type="button" class="btn btn-primary" ng-click="hideModal()">Gem</button>
+            </div>
+        </div>
+    </div>
+</div>
