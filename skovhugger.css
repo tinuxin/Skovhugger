@@ -1,41 +1,9 @@
-/*.base-class {*/
-    /*-webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;*/
-    /*transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;*/
-/*}*/
-
-/*.base-class.prut {*/
-    /*color: red;*/
-    /*font-size: 3em;*/
-    /*display: none;*/
-/*}*/
-
-/*.animate-show {*/
-    /*line-height:20px;*/
-    /*opacity:1;*/
-    /*padding:10px;*/
-/*}*/
-
-/*.animate-show.ng-hide-add.ng-hide-add-active,*/
-/*.animate-show.ng-hide-remove.ng-hide-remove-active {*/
-    /*-webkit-transition:all linear 0.5s;*/
-    /*transition:all linear 0.5s;*/
-/*}*/
-
-/*.animate-show.ng-hide {*/
-    /*line-height:0;*/
-    /*opacity:0;*/
-    /*padding:0 10px;*/
-/*}*/
-
 .tabelcelle {
     text-align: center;
-    /*font-size: 150%;*/
 }
 
 .scorerow {
     width: 10%;
-    /*font-size: 200%;*/
-    /*font-weight: bolder;*/
 }
 
 .scorelabel {
@@ -70,60 +38,45 @@
     margin-bottom: 5px;
 }
 
-/*.btn.tekst {*/
-    /*font-size: 200%;*/
-/*}*/
-
-/*.btn.labeltekst {*/
-    /*font-size: 200%;*/
-    /*font-weight: 900;*/
-    /*color: #000000;*/
-/*}*/
-
 .view-animate.ng-enter, .view-animate.ng-leave {
-    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    -webkit-transition:all cubic-bezier(0, 0, 1, 1) 1s;
+    transition:all cubic-bezier(0, 0, 1, 1) 1s;
+    -webkit-transform: translate3d(0,0,0);
 
     display:block;
     width:100%;
 
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:45px;
 }
 
 .view-animate.ng-hide-add, .view-animate.ng-hide-remove {
-    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+    -webkit-transition:all cubic-bezier(0, 0, 1, 1) 1s;
+    transition:all cubic-bezier(0, 0, 1, 1) 1s;
+    -webkit-transform: translate3d(0,0,0);
 
     display:block;
     width:100%;
-    border-left:1px solid black;
-
-    padding:10px;
 }
 
-.view-animate.ng-enter, .view-animate.ng-hide-add {
+.view-animate.ng-enter {
     left:100%;
 }
-.view-animate.ng-enter.ng-enter-active, .view-animate.ng-hide-add.ng-hide-add-active {
-    left:0;
+.view-animate.ng-enter.ng-enter-active {
+    left:0%;
 }
-.view-animate.ng-leave.ng-leave-active, .view-animate.ng-hide-remove.ng-hide-add-remove {
+.view-animate.ng-leave.ng-leave-active {
     left:-100%;
 }
 
-.vaerdivaelger.ng-hide-add.ng-hide-add-active, .vaerdivaelger.ng-hide-remove.ng-hide-remove-active {
-    -webkit-transition:all linear 0.5s;
-    transition:all linear 0.5s;
-}
+/*.vaerdivaelger.ng-hide-add.ng-hide-add-active, .vaerdivaelger.ng-hide-remove.ng-hide-remove-active {*/
+    /*-webkit-transition:all linear 0.5s;*/
+    /*transition:all linear 0.5s;*/
+    /*-webkit-transform: translate3d(0,0,0);*/
+/*}*/
 
-.vaerdivaelger.ng-hide {
-    opacity: 0;
-}
+/*.vaerdivaelger.ng-hide {*/
+    /*opacity: 0;*/
+/*}*/
 
 h1 {
     height: 45px;
@@ -133,7 +86,3 @@ h1 {
     -webkit-box-shadow: 0 0 9px 4px rgba(0, 0, 255,0.8) ;
     box-shadow: 0 0 9px 4px rgba(0, 0, 255,0.8) ;
 }
-/*<input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">*/
-/*<input id="clearbtn" type="button" value="clear" ng-click="myVar=''">*/
-/*<br>*/
-/*<span class="base-class" ng-class="myVar">Sample Text</span>*/

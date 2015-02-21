@@ -1,20 +1,20 @@
-<!--<h2>Setup</h2>-->
-<!--<div class="well well-large">-->
-    <form class="form-group"  ng-submit="addTeam()">
-        <div class="input-group input-group-lg hold">
-            <span class="input-group-addon glyphicon glyphicon-user"></span>
-            <input id="holdnavn" type="text" ng-model="nytHoldNavn" placeholder="Indtast holdets navn" class="form-control" required>
+<form class="form-group" ng-submit="addTeam()">
+    <div class="input-group input-group-lg hold">
+        <span class="input-group-addon glyphicon glyphicon-user"></span>
+        <input id="holdnavn" type="text" ng-model="nytHoldNavn" placeholder="Indtast holdets navn" class="form-control"
+               required>
             <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
             </span>
-        </div>
-        <div>
-            <a ng-repeat="team in teams" class="btn btn-success btn-block hold" ng-click="removeTeam($index)">{{team}}</a>
-        </div>
-        <div>
-            <a ng-disabled="teams.length<1" href="#view2" class="btn btn-primary btn-lg btn-block"> <span class="glyphicon glyphicon-ok-sign"/> </a>
-        </div>
-    </form>
+    </div>
+    <div>
+        <a ng-repeat="team in teams" class="btn btn-success btn-block hold" ng-click="removeTeam($index)">{{team}}</a>
+    </div>
+    <div>
+        <a ng-disabled="teams.length<1" href="#view2" class="btn btn-primary btn-lg btn-block"> <span
+                class="glyphicon glyphicon-ok-sign"/> </a>
+    </div>
+</form>
 
