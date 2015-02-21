@@ -25,10 +25,9 @@ skovhuggerApp.controller('View2Controller', function ($scope, Data, $route) {
                     $scope.activeTeamCounter = 0;
                 }
             }
+            $scope.hits = null;
+            $scope.multiValue = Array(3);
         }
-
-        $scope.hits = null;
-        $scope.multiValue = Array(3);
     }
 
     $scope.calculateNewTotalScore = function () {
